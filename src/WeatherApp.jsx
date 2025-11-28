@@ -7,7 +7,7 @@ export default function WeatherApp(){
     const [weatherInfo,setWeatherInfo] = useState(
         {
         city : "Delhi",
-        feelslike : 24.84,
+        feelsLike : 24.84,
         temp : 25.05,
         tempMin : 25.05,
         tempMax: 25.05,
@@ -21,7 +21,8 @@ export default function WeatherApp(){
 
     return(
         <div style={{textAlign: "center"}}>
-            <h2>Weather App by Tejas</h2>
+            <h2>Weather App</h2>
+            <h3 style={{color:"darkblue"}}>Search for Weather</h3>
             <SearchBox updateInfo = {updateInfo}/>
             <InfoBox info={weatherInfo}/>
         </div>

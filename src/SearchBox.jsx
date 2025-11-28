@@ -12,9 +12,9 @@ export function SearchBox({updateInfo}){
     let[error,setError] = useState(false);
 
 
-    const API_URL = "https://api.openweathermap.org/data/2.5/weather";
-    const API_KEY = "568f15af5efce3e076f7c2aea9f82119";
-
+    const API_URL = import.meta.env.VITE_API_URL;
+    const API_KEY = import.meta.env.VITE_API_KEY;
+    
     let getWeatherInfo = async() =>{
         try{
             let response = await fetch(`${API_URL}?q=${city}&appid=${API_KEY}&units=metric`);
@@ -47,6 +47,8 @@ export function SearchBox({updateInfo}){
             console.log(city);
             setCity("");
             let newInfo = await getWeatherInfo();
+            // Reset error because city is valid
+            setError(false);
             updateInfo(newInfo);
         }catch(err){
             setError(true);

@@ -1,8 +1,117 @@
+
 .InfoBox{
     text-align: center;
+}
+
+
+
+.CardContainer {
+    display: flex;
+    justify-content: center;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+
+    /* Add subtle background behind the card */
+    background: linear-gradient(135deg, #2c3e50, #34495e); 
+    padding: 20px;
+    border-radius: 20px;
 }
 
 .CardContainer{
     display: flex;
     justify-content: center;
+}
+
+.weather-details {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* space between lines */
+    padding: 15px;
+    border-radius: 12px;
+
+    /* Soft background */
+    background: rgba(255, 255, 255, 0.7);
+
+    /* smooth blur/card effect */
+    backdrop-filter: blur(6px);
+
+    /* soft shadow */
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+
+    font-size: 16px;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Improve <p> styling */
+.weather-details p {
+    margin: 0;
+    padding: 8px 12px;
+    border-radius: 8px;
+
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    background: rgba(0,0,0,0.05);
+    transition: 0.2s ease;
+}
+
+/* Hover effect */
+.weather-details p:hover {
+    background: rgba(207, 13, 13, 0.1);
+    transform: translateX(4px);
+}
+
+.InfoBox {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.CardContainer {
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.CardContainer:hover {
+    transform: scale(1.04);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* Weather Details Box */
+.weather-details {
+    display: block;
+    margin-top: 10px;
+    padding: 12px;
+    background: linear-gradient(135deg, rgba(251, 228, 228, 0.85), rgba(240,240,240,0.95));
+    border-left: 4px solid #4a90e2;
+    border-radius: 6px;
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+/* Add spacing + emoji style */
+.weather-details p {
+    margin: 6px 0;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* Emojis for effect */
+.weather-details p:nth-child(1)::before { content: "🌡️"; }
+.weather-details p:nth-child(2)::before { content: "💧"; }
+.weather-details p:nth-child(3)::before { content: "📉"; }
+.weather-details p:nth-child(4)::before { content: "📈"; }
+.weather-details p:nth-child(5)::before { content: "☁️"; }
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
